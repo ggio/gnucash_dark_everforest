@@ -1,0 +1,448 @@
+
+@define-color	base3	  #2f383e;
+@define-color	base2   #2f383e;
+@define-color	base1   #93a1a1;
+@define-color	base0   #d3c6aa;
+@define-color	base00  #657b83;
+@define-color	base01  #586e75;
+@define-color	base02  #073642;
+@define-color	base03  #002b36;
+
+@define-color	yellow  #b58900;
+@define-color	orange	#cb4b16;
+@define-color	red	    #dc322f;
+@define-color	magenta	#d33682;
+@define-color	violet	#d3c6aa;
+@define-color	blue	  #268bd2;
+@define-color	cyan	  #2aa198;
+@define-color	green	  #859900;
+
+@define-color bg-dark   #2f383e;
+@define-color bg2-dark  #374247;
+@define-color fg-dark   #d3c6aa;
+@define-color fg2-dark   #C9B382;
+
+/* DEFININDO CORES */
+
+@define-color	bg_color	@bg-dark;
+@define-color	bg_highlight	@bg2-dark;
+@define-color	fg_color	@fg-dark;
+@define-color	fg_highlight	@fg2-dark;
+@define-color	separator	#22282c;
+
+/* Scollbar size */
+scrollbar slider {
+    /* Size of the slider */
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 22px;
+    color: @fg_color;
+    background-color: @fg_color;
+
+    /* Padding around the slider */
+    border: 5px solid transparent;
+}
+
+gnc-id-register {
+}
+
+/* Register sheet font setting */
+gnc-id-sheet {
+  border-width: 0px;
+  outline-width: 0px;
+}
+
+/* Register header font setting */
+gnc-id-header {
+}
+
+.gnc-class-register-foreground {
+  color: inherit;
+}
+
+/* Register cursor font setting */
+gnc-id-cursor {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+  border-color: @fg_highlight;
+}
+
+gnc-id-cursor entry {
+  background-color: inherit;
+  color: inherit;
+  border-color: inherit;
+  border-width: 1px;
+}
+
+gnc-id-cursor entry undershoot {
+  background-color: inherit;
+  color: inherit;
+}
+
+selection {
+  background-color: @fg_color;
+  color: @bg_color;
+}
+
+messagedialog box {
+}
+
+button {
+  /* Clear button image imposed by GTK theme */
+  background-image: none;
+  border-width: 3px;
+  border-style: solid;
+  border-color: mix (@separator, @bg_color, 0.5);
+}
+
+button:hover {
+  border-color: @separator;
+  background-color: @bg_highlight;
+}
+
+button:hover box label {
+  background-color: inherit;
+  color: @fg_highlight;
+}
+
+button:active {
+  border-color: mix (@separator, @fg_highlight, 0.5);
+}
+
+check {
+  background-image: none;
+  color: @yellow;
+  background-color: mix (@separator, @bg_color, 0.5);
+}
+
+check:hover {
+  background-color: @separator;
+}
+
+check:checked {
+  background-color: @separator;
+}
+
+gnc-id-cursor widget {
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+/** This doesn't do anything, but reminds me how GTK specific properties are suppposed to work. */
+/* GtkEntry  {
+  -gtkwidget-focus-line-width: 0;
+  -gtkentry-inner-border: 0;
+  -gtkentry-has-frame: false;
+  -gtkentry-separator-height: 0;
+} */
+
+gnc-id-cursor button {
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+  border-width: 1px;
+}
+
+/* Register sheet calendar */
+gnc-id-sheet calendar {
+}
+
+/* Register User Colors, remove 'user' for builtin register values */
+.gnc-class-register-header {
+  color: #22282c;
+  background-color: #96b183; /*#668856;*/
+}
+
+.gnc-class-register-primary {
+  color: #22282c;
+   background-color: #bfdeb9; /*#a7c080; */
+}
+
+.gnc-class-register-primary:disabled {
+  color: mix (black, @bg_color, 0.5);
+  background-color: #a7c080;
+}
+
+.gnc-class-register-secondary {
+  color: #22282c;
+  background-color: #f6ffda; /* #ffefce; */
+}
+
+.gnc-class-register-secondary:disabled {
+  color: mix (black, @bg_color, 0.5);
+  background-color: #bf983d;
+}
+
+.gnc-class-register-split {
+  color: @fg_color;
+}
+
+.gnc-class-register-split:disabled {
+  color: mix (@fg_color, @bg_color, 0.5);
+}
+
+.gnc-class-register-cursor {
+  background-color: #ffef98;
+  color: #524501;
+}
+
+#gnc-id-account-tree:hover {
+  /* Why doesn't this apply?  color applies just fine... */
+  background-color: @bg_highlight;
+}
+
+treeview {
+  background-color: @bg_color;
+  color: @fg_color;
+}
+
+treeview:hover {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+treeview:selected {
+  color: @yellow;
+}
+
+gnc-id-sheet-list treeview {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+gnc-id-sheet-list treeview:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: @fg_highlight;
+  background-color: @bg_color;
+}
+
+/*
+gnc-id-sheet-list treeview:selected {
+  color: @yellow;
+}
+*/
+
+/* Toolbar Button size and spacing */
+toolbar {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+/* Toolbar font size, 0 to remove text */
+toolbar toolbutton label {
+  /* font-size: 0px; */
+}
+
+toolbar toolbutton button {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+toolbar toolbutton label {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* Negative number color */
+.gnc-class-negative-numbers {
+  color: @red;
+}
+
+/* Gnucash Main Window, reduce size */
+#gnc-id-main-window notebook tab {
+  min-height: 0px;
+  min-width: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+#gnc-id-main-window notebook label {
+  /* font: 14px arial, sans-serif; */
+}
+
+#gnc-id-main-window notebook tab button {
+  min-height: 0;
+  min-width: 0;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+tab:checked, tab:checked label {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+/* Dense Calendar Settings, use widget name gnc-id-dense-calendar
+ * or gtk css name calendar which would also apply to other calendar
+ * widgets */
+#gnc-id-dense-calendar .frame {
+}
+
+calendar .frame {
+}
+
+#gnc-id-dense-calendar .header {
+ color: @blue;
+}
+
+calendar .header {
+ color: @blue;
+}
+
+#gnc-id-dense-calendar .primary {
+  color: @green;
+}
+
+#gnc-id-dense-calendar .secondary {
+  color: @yellow;
+}
+
+#gnc-id-dense-calendar .markers {
+  color: @red;
+}
+
+#gnc-id-dense-calendar-popup {
+  color: orange;
+}
+
+#gnc-id-dense-calendar-popup treeview {
+  color: orange;
+}
+
+/* Progress bar */
+progressbar progress {
+  color: green;
+}
+
+/* Status Bar */
+statusbar frame {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+statusbar label {
+  /* font-size: 12px; */
+  color: @yellow;
+}
+
+/* Reconcile Window */
+#gnc-id-reconcile-totals * {
+}
+
+.gnc-class-credits treeview {
+}
+
+.gnc-class-credits treeview:selected {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+.gnc-class-debits treeview {
+}
+
+.gnc-class-debits treeview:selected {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+/* Highlight Text */
+.gnc-class-highlight {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+/* Summary bar */
+#gnc-id-summarybar {
+  background-color: @bg_highlight;
+  color: @yellow;
+}
+
+#gnc-id-summarybar .gnc-class-highlight {
+  background-color: @bg_highlight;
+  color: @yellow;
+}
+
+#gnc-id-summarybar label {
+  background-color: @bg_highlight;
+  color: @yellow;
+}
+
+/* Application wide font setting */
+* {
+  color: @fg_color;
+  background-color: @bg_color;
+  border-color: @fg_color;
+  outline-color: @fg_color;
+  outline-width: 0px;
+  border-width: 0px;
+  /* font: 12px arial; */
+}
+
+/* GTK doesn't support attribute selectors so can't use things like :not([disable]) */
+
+#gnc-id-main-window menubar {
+  color: @fg_color;
+  background-color: @bg_highlight;
+  outline-width: 0px;
+  border-width: 0px;
+}
+
+menuitem label {
+  background-color: inherit;
+  color: inherit;
+}
+
+menuitem label accelerator {
+  background-color: inherit;
+  color: inherit;
+}
+
+menuitem:disabled {
+  color: mix (@fg_color, @bg_color, 0.5);
+}
+
+menuitem:hover {
+  background-color: @bg_color;
+  color: inherit;
+}
+
+menuitem {
+  background-color: @bg_highlight;
+  color: @fg_color;
+}
+
+/*
+*:focus {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+*/
+
+.text-button label {
+  background-color: inherit;
+}
+
+button:focus label {
+  color: @fg_highlight;
+}
+
+button:focus {
+  background-color: @bg_highlight;
+}
+
+/*
+ * 
+ * From the gnc-combott i've tried this as class, id, and element.  No luck.
+ *
+  gnc-id-combo-tooltip {
+    background-color: @bg_highlight;
+    color: @yellow;
+  }
+*/
