@@ -1,34 +1,55 @@
-
-@define-color	base3	  #2f383e;
-@define-color	base2   #2f383e;
-@define-color	base1   #93a1a1;
-@define-color	base0   #d3c6aa;
-@define-color	base00  #657b83;
-@define-color	base01  #586e75;
-@define-color	base02  #073642;
-@define-color	base03  #002b36;
+/* Elementary colors */
 
 @define-color	yellow  #b58900;
-@define-color	orange	#cb4b16;
-@define-color	red	    #dc322f;
-@define-color	magenta	#d33682;
-@define-color	violet	#d3c6aa;
-@define-color	blue	  #268bd2;
-@define-color	cyan	  #2aa198;
-@define-color	green	  #859900;
+@define-color	red	    #FF7F7D; 
 
 @define-color bg-dark   #2f383e;
 @define-color bg2-dark  #374247;
 @define-color fg-dark   #d3c6aa;
 @define-color fg2-dark   #C9B382;
 
-/* DEFININDO CORES */
+/* Application wide colors */
 
-@define-color	bg_color	@bg-dark;
+@define-color	bg_color	    @bg-dark;
 @define-color	bg_highlight	@bg2-dark;
-@define-color	fg_color	@fg-dark;
+@define-color	fg_color	    @fg-dark;
 @define-color	fg_highlight	@fg2-dark;
-@define-color	separator	#22282c;
+@define-color	separator	    #22282c;
+
+/* Register colors */
+
+@define-color bg_header #546940;
+@define-color fg_header #d4ddcd;
+@define-color bg_primary #A7C080;
+@define-color fg_primary #1c2921;
+@define-color bg_secondary #f6ffda;
+@define-color fg_secondary #272402;
+@define-color bg_cursor #ffef98;
+@define-color fg_cursor #3e3402;
+
+/* MINHAS TWEAKS */
+
+
+/** This doesn't do anything, but reminds me how GTK specific properties are suppposed to work. */
+/* GtkEntry  {
+  -gtkwidget-focus-line-width: 0;
+  -gtkentry-inner-border: 0;
+  -gtkentry-has-frame: false;
+  -gtkentry-separator-height: 0;
+} */
+
+/* DO MODELO */
+
+/* Application wide font setting */
+* {
+  color: @fg_color;
+  /* background-color: @bg_color; */
+  border-color: @fg_color;
+  outline-color: @fg_color;
+  outline-width: 0px;
+  border-width: 0px;
+  /* font: 12px arial; */
+}
 
 /* Scollbar size */
 scrollbar slider {
@@ -43,6 +64,8 @@ scrollbar slider {
     border: 5px solid transparent;
 }
 
+/* ====== REGISTER ====== */
+
 gnc-id-register {
 }
 
@@ -50,6 +73,7 @@ gnc-id-register {
 gnc-id-sheet {
   border-width: 0px;
   outline-width: 0px;
+  background-color: @bg_color;
 }
 
 /* Register header font setting */
@@ -60,23 +84,31 @@ gnc-id-header {
   color: inherit;
 }
 
-/* Register cursor font setting */
+/* Register cursor font setting */ 
+/* # Incluir margem de baixo na célular de entrada */
 gnc-id-cursor {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
+  background-color: @fg_cursor;
+  color: @fg_cursor;
   border-color: @fg_highlight;
+  background: @bg_cursor;
 }
 
 gnc-id-cursor entry {
-  background-color: inherit;
-  color: inherit;
-  border-color: inherit;
-  border-width: 1px;
+  background-color: @bg_cursor;
+  color: @fg_cursor;
+  /* border-color: red;
+  border-width: 1px;   */
 }
 
 gnc-id-cursor entry undershoot {
-  background-color: inherit;
+  background-color: @bg_cursor;
+  color: @fg_cursor;
+}
+
+gnc-id-cursor widget {
   color: inherit;
+  background-color: inherit;
+  border-color: inherit;
 }
 
 selection {
@@ -87,14 +119,61 @@ selection {
 messagedialog box {
 }
 
+/* Register sheet calendar */
+gnc-id-sheet calendar {
+}
+
+/* Register User Colors, remove 'user' for builtin register values */
+.gnc-class-register-header {
+  color: @fg_header;
+  background-color: @bg_header;  
+}
+
+.gnc-class-register-primary {
+  color: @fg_primary;
+  background-color: @bg_primary;
+}
+
+.gnc-class-register-primary:disabled {
+  color: mix (black, @bg_color, 0.5);
+  background-color: @bg_primary;
+}
+
+.gnc-class-register-secondary {
+  color: @fg_secondary;
+  background-color: @bg_secondary;
+}
+
+.gnc-class-register-secondary:disabled {
+  color: mix (black, @bg_color, 0.5);
+  background-color: @bg_secondary;
+}
+
+.gnc-class-register-split {
+  color: @fg_color;
+}
+
+.gnc-class-register-split:disabled {
+  color: mix (@fg_color, @bg_color, 0.5);
+}
+
+.gnc-class-register-cursor {
+  background-color: @bg_cursor;
+  color: @fg_cursor;
+}
+
+/* ====== BUTTONS ====== */
+
 button {
   /* Clear button image imposed by GTK theme */
   background-image: none;
   border-width: 3px;
   border-style: solid;
   border-color: mix (@separator, @bg_color, 0.5);
+  background-color: @bg_color;
 }
 
+/* # Intensificar esse realce */
 button:hover {
   border-color: @separator;
   background-color: @bg_highlight;
@@ -123,20 +202,6 @@ check:checked {
   background-color: @separator;
 }
 
-gnc-id-cursor widget {
-  color: inherit;
-  background-color: inherit;
-  border-color: inherit;
-}
-
-/** This doesn't do anything, but reminds me how GTK specific properties are suppposed to work. */
-/* GtkEntry  {
-  -gtkwidget-focus-line-width: 0;
-  -gtkentry-inner-border: 0;
-  -gtkentry-has-frame: false;
-  -gtkentry-separator-height: 0;
-} */
-
 gnc-id-cursor button {
   color: inherit;
   background-color: inherit;
@@ -144,47 +209,19 @@ gnc-id-cursor button {
   border-width: 1px;
 }
 
-/* Register sheet calendar */
-gnc-id-sheet calendar {
+/* ====== MAIN ====== */
+
+#gnc-id-main-window {
+  background-color: @bg_highlight;
 }
 
-/* Register User Colors, remove 'user' for builtin register values */
-.gnc-class-register-header {
-  color: #22282c;
-  background-color: #96b183; /*#668856;*/
+#gnc-id-main-window notebook header {
+  background-color: @bg_highlight;
 }
 
-.gnc-class-register-primary {
-  color: #22282c;
-   background-color: #bfdeb9; /*#a7c080; */
-}
-
-.gnc-class-register-primary:disabled {
-  color: mix (black, @bg_color, 0.5);
-  background-color: #a7c080;
-}
-
-.gnc-class-register-secondary {
-  color: #22282c;
-  background-color: #f6ffda; /* #ffefce; */
-}
-
-.gnc-class-register-secondary:disabled {
-  color: mix (black, @bg_color, 0.5);
-  background-color: #bf983d;
-}
-
-.gnc-class-register-split {
-  color: @fg_color;
-}
-
-.gnc-class-register-split:disabled {
-  color: mix (@fg_color, @bg_color, 0.5);
-}
-
-.gnc-class-register-cursor {
-  background-color: #ffef98;
-  color: #524501;
+/* Area above the status bar */
+#gnc-id-account-page {
+  background-color: @bg_highlight;
 }
 
 #gnc-id-account-tree:hover {
@@ -217,12 +254,6 @@ gnc-id-sheet-list treeview:hover {
   border-color: @fg_highlight;
   background-color: @bg_color;
 }
-
-/*
-gnc-id-sheet-list treeview:selected {
-  color: @yellow;
-}
-*/
 
 /* Toolbar Button size and spacing */
 toolbar {
@@ -260,6 +291,11 @@ toolbar toolbutton label {
   margin-bottom: 0px;
   border-top: 0px;
   border-bottom: 0px;
+  background-color: @bg_color;
+}
+
+#gnc-id-main-window notebook tab:checked {
+  background-color: @bg_highlight;
 }
 
 #gnc-id-main-window notebook label {
@@ -282,6 +318,7 @@ tab:checked, tab:checked label {
 /* Dense Calendar Settings, use widget name gnc-id-dense-calendar
  * or gtk css name calendar which would also apply to other calendar
  * widgets */
+
 #gnc-id-dense-calendar .frame {
 }
 
@@ -325,7 +362,12 @@ progressbar progress {
 statusbar frame {
   margin-top: 0px;
   margin-bottom: 0px;
+  background-color: @bg_highlight;
 }
+
+statusbar {
+  background-color: @bg_highlight;
+} 
 
 statusbar label {
   /* font-size: 12px; */
@@ -372,17 +414,6 @@ statusbar label {
 #gnc-id-summarybar label {
   background-color: @bg_highlight;
   color: @yellow;
-}
-
-/* Application wide font setting */
-* {
-  color: @fg_color;
-  background-color: @bg_color;
-  border-color: @fg_color;
-  outline-color: @fg_color;
-  outline-width: 0px;
-  border-width: 0px;
-  /* font: 12px arial; */
 }
 
 /* GTK doesn't support attribute selectors so can't use things like :not([disable]) */
@@ -446,3 +477,18 @@ button:focus {
     color: @yellow;
   }
 */
+
+/* DIALOGS */
+
+#gnc-id-account {
+  background-color: @bg_color;
+}
+
+#gnc-id-account notebook stack, header {
+  background-color: @bg_highlight;
+}
+
+/* Adding some contrast in the budget */
+#gnc-id-account-tree {
+  background-color: @bg_highlight;
+}
