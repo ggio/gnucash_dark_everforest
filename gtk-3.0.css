@@ -1,54 +1,84 @@
+/* ====== COLORS ====== */
+
 /* Elementary colors */
 
-@define-color	yellow  #b58900;
-@define-color	red	    #FF7F7D; 
-
-@define-color bg-dark   #2f383e;
-@define-color bg2-dark  #374247;
+@define-color yellow    #b58900;
+@define-color red	#e04c56;
+@define-color red-light	#dc747b;
+@define-color dark	#2f383e;
+@define-color dark2  	#374247;
+@define-color dark3  	#22282c;
+@define-color bg-new	#54646c;
 @define-color fg-dark   #d3c6aa;
-@define-color fg2-dark   #C9B382;
+@define-color fg2-dark  #C9B382;
+@define-color fg-new	#cdae6a;
+@define-color charcoal	#2a2a2a;
+
+/* Everforest */
+@define-color bg0-dark       #22282c;
+@define-color bg1-dark       #272f34;
+@define-color bg-dark        #2f383e;
+@define-color bg2-dark       #374247;
+@define-color bg3-dark       #404c51;
+@define-color bg4-dark       #4a555b;
+@define-color bg5-dark       #525c62;
+@define-color bg_visual      #503946;
+@define-color bg_red         #4e3e43;
+@define-color bg_green       #404d44;
+@define-color bg_blue        #394f5a;
+@define-color bg_yellow      #4a4940;
+@define-color shadow         #000070;
 
 /* Application wide colors */
 
-@define-color	bg_color	    @bg-dark;
-@define-color	bg_highlight	@bg2-dark;
-@define-color	fg_color	    @fg-dark;
-@define-color	fg_highlight	@fg2-dark;
-@define-color	separator	    #22282c;
+@define-color	bg_color	@dark2;
+@define-color	bg_highlight	@bg3-dark;
+@define-color	bg_dark		@dark;
+@define-color	bg_darker	@dark3;
+@define-color	fg_color	@fg-dark;
+@define-color	fg_highlight	@fg-new;
+@define-color	fg_pop		@yellow;
+@define-color	negative	@red;
 
-/* Register colors */
+/* Register's colors */
 
-@define-color bg_header #546940;
-@define-color fg_header #d4ddcd;
-@define-color bg_primary #A7C080;
-@define-color fg_primary #1c2921;
-@define-color bg_secondary #f6ffda;
-@define-color fg_secondary #272402;
-@define-color bg_cursor #ffef98;
-@define-color fg_cursor #3e3402;
+@define-color bg_header     #4c5f3a;
+/*@define-color fg_header     #d4ddcd;*/
+@define-color bg_primary    #A7C080;
+@define-color fg_primary    #1c2921;
+@define-color bg_secondary  #fff9b2;
+@define-color fg_secondary  #272402;
+@define-color bg_cursor     #ffeb81;
+@define-color fg_cursor     #3a3000;
 
-/* MINHAS TWEAKS */
+/* TODO:
+    * (C) Relatórios CSS's
+*/
 
+/* NOTE: Questões não resolvidas:
+    *
+    * Calendário horroroso
+*/
 
-/** This doesn't do anything, but reminds me how GTK specific properties are suppposed to work. */
-/* GtkEntry  {
-  -gtkwidget-focus-line-width: 0;
-  -gtkentry-inner-border: 0;
-  -gtkentry-has-frame: false;
-  -gtkentry-separator-height: 0;
-} */
-
-/* DO MODELO */
+/* ====== GENERAL ====== */
 
 /* Application wide font setting */
 * {
   color: @fg_color;
-  /* background-color: @bg_color; */
   border-color: @fg_color;
   outline-color: @fg_color;
   outline-width: 0px;
   border-width: 0px;
-  /* font: 12px arial; */
+}
+
+/* Highlight Text */
+.gnc-class-highlight {
+  background-color: @bg_color;
+  color: @fg_highlight;
+}
+
+entry {
+  background-color: @bg_darker;
 }
 
 /* Scollbar size */
@@ -59,11 +89,195 @@ scrollbar slider {
     border-radius: 22px;
     color: @fg_color;
     background-color: @fg_color;
-
     /* Padding around the slider */
     border: 5px solid transparent;
 }
 
+/* ====== MAIN ====== */
+
+#gnc-id-main-window {
+  background-color: @bg_darker;
+}
+
+#gnc-id-main-window notebook header {
+  background-color: @bg_darker;
+}
+
+/* Area above the status bar */
+#gnc-id-account-page {
+  background-color: @bg_darker;
+}
+
+#gnc-id-account-tree:hover {
+  /* Why doesn't this apply?  color applies just fine... */
+  background-color: @bg_highlight;
+}
+
+/* Tweaking with some trees to add some contrast in the budget */
+#gnc-id-account-tree {
+  background-color: @bg_color;
+}
+
+/* Controls, along much other things, the budget summary */
+treeview {
+  background-color: @bg_darker;
+  color: @fg_color;
+}
+
+treeview:hover {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+treeview:selected {
+  color: @fg_pop;
+}
+
+gnc-id-sheet-list treeview {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+gnc-id-sheet-list treeview:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: @fg_highlight;
+  background-color: @bg_color;
+}
+
+/* Progress bar */
+progressbar progress {
+  color: green;
+}
+
+/* Status Bar */
+statusbar frame {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: @bg_darker;
+}
+
+statusbar {
+  background-color: @bg_darker;
+} 
+
+statusbar label {
+  /* font-size: 12px; */
+  color: @fg_pop;
+}
+
+/* Summary bar */
+#gnc-id-summarybar {
+  background-color: @bg_color;
+  color: @fg_pop;
+}
+
+#gnc-id-summarybar .gnc-class-highlight {
+  background-color: @bg_highlight;
+  color: @fg_pop;
+}
+
+#gnc-id-summarybar label {
+  background-color: @bg_color;
+  color: @fg_pop;
+}
+
+/* Toolbar Button size and spacing */
+toolbar {
+  background-color: @bg_color;
+  color: @fg_highlight;
+}
+
+/* Toolbar font size, 0 to remove text */
+toolbar toolbutton label {
+  /* font-size: 0px; */
+}
+
+toolbar toolbutton button {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+toolbar toolbutton label {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* Negative number color */
+.gnc-class-negative-numbers {
+  color: @negative;
+}
+
+/* Gnucash Main Window, reduce size */
+#gnc-id-main-window notebook tab {
+  min-height: 25px;
+  min-width: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-top: 0px;
+  border-bottom: 0px;
+  background-color: @bg_dark;
+}
+
+#gnc-id-main-window notebook tab:checked {
+  background-color: @bg_highlight;
+}
+
+#gnc-id-main-window notebook tab:checked label {
+  color: @fg_pop;
+}
+
+#gnc-id-main-window notebook label {
+  /* font: 14px arial, sans-serif; */
+}
+
+#gnc-id-main-window notebook tab button {
+  min-height: 0;
+  min-width: 0;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+tab:checked, tab:checked label {
+  background-color: @bg_highlight;
+  color: @fg_highlight;
+}
+
+/* ====== MENU ====== */
+
+#gnc-id-main-window menubar {
+  color: @fg_color;
+  background-color: @bg_color;
+  outline-width: 0px;
+  border-width: 0px;
+}
+
+menuitem label {
+  background-color: inherit;
+  color: inherit;
+}
+
+menuitem label accelerator {
+  background-color: inherit;
+  color: inherit;
+}
+
+menuitem:disabled {
+  color: mix (@fg_color, @bg_color, 0.5);
+}
+
+menuitem:hover {
+  background-color: @bg_highlight;
+  color: @fg_highlight
+}
+
+menuitem {
+  background-color: @bg_color;
+  color: @fg_color;
+}
 /* ====== REGISTER ====== */
 
 gnc-id-register {
@@ -82,15 +296,6 @@ gnc-id-header {
 
 .gnc-class-register-foreground {
   color: inherit;
-}
-
-/* Register cursor font setting */ 
-/* # Incluir margem de baixo na célular de entrada */
-gnc-id-cursor {
-  background-color: @fg_cursor;
-  color: @fg_cursor;
-  border-color: @fg_highlight;
-  background: @bg_cursor;
 }
 
 gnc-id-cursor entry {
@@ -116,17 +321,15 @@ selection {
   color: @bg_color;
 }
 
-messagedialog box {
-}
-
 /* Register sheet calendar */
 gnc-id-sheet calendar {
+  border-width: 1px;
 }
 
 /* Register User Colors, remove 'user' for builtin register values */
 .gnc-class-register-header {
-  color: @fg_header;
-  background-color: @bg_header;  
+  color: @fg_color;
+  background-color: @bg_header;
 }
 
 .gnc-class-register-primary {
@@ -150,7 +353,8 @@ gnc-id-sheet calendar {
 }
 
 .gnc-class-register-split {
-  color: @fg_color;
+  color: @fg_secondary;
+  background-color: @bg_secondary;
 }
 
 .gnc-class-register-split:disabled {
@@ -169,295 +373,22 @@ button {
   background-image: none;
   border-width: 3px;
   border-style: solid;
-  border-color: mix (@separator, @bg_color, 0.5);
-  background-color: @bg_color;
+  border-color: mix (@bg_darker, @bg_dark, 0.5);
+  background-color: @bg_dark;
 }
 
-/* # Intensificar esse realce */
 button:hover {
-  border-color: @separator;
+  border-color: @bg_darker;
   background-color: @bg_highlight;
 }
 
-button:hover box label {
+button:hover label {
   background-color: inherit;
-  color: @fg_highlight;
+  color: @fg_pop;
 }
 
 button:active {
-  border-color: mix (@separator, @fg_highlight, 0.5);
-}
-
-check {
-  background-image: none;
-  color: @yellow;
-  background-color: mix (@separator, @bg_color, 0.5);
-}
-
-check:hover {
-  background-color: @separator;
-}
-
-check:checked {
-  background-color: @separator;
-}
-
-gnc-id-cursor button {
-  color: inherit;
-  background-color: inherit;
-  border-color: inherit;
-  border-width: 1px;
-}
-
-/* ====== MAIN ====== */
-
-#gnc-id-main-window {
-  background-color: @bg_highlight;
-}
-
-#gnc-id-main-window notebook header {
-  background-color: @bg_highlight;
-}
-
-/* Area above the status bar */
-#gnc-id-account-page {
-  background-color: @bg_highlight;
-}
-
-#gnc-id-account-tree:hover {
-  /* Why doesn't this apply?  color applies just fine... */
-  background-color: @bg_highlight;
-}
-
-treeview {
-  background-color: @bg_color;
-  color: @fg_color;
-}
-
-treeview:hover {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-treeview:selected {
-  color: @yellow;
-}
-
-gnc-id-sheet-list treeview {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-gnc-id-sheet-list treeview:hover {
-  border-style: solid;
-  border-width: 1px;
-  border-color: @fg_highlight;
-  background-color: @bg_color;
-}
-
-/* Toolbar Button size and spacing */
-toolbar {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-/* Toolbar font size, 0 to remove text */
-toolbar toolbutton label {
-  /* font-size: 0px; */
-}
-
-toolbar toolbutton button {
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-toolbar toolbutton label {
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-/* Negative number color */
-.gnc-class-negative-numbers {
-  color: @red;
-}
-
-/* Gnucash Main Window, reduce size */
-#gnc-id-main-window notebook tab {
-  min-height: 0px;
-  min-width: 0px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border-top: 0px;
-  border-bottom: 0px;
-  background-color: @bg_color;
-}
-
-#gnc-id-main-window notebook tab:checked {
-  background-color: @bg_highlight;
-}
-
-#gnc-id-main-window notebook label {
-  /* font: 14px arial, sans-serif; */
-}
-
-#gnc-id-main-window notebook tab button {
-  min-height: 0;
-  min-width: 0;
-  padding: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-tab:checked, tab:checked label {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-/* Dense Calendar Settings, use widget name gnc-id-dense-calendar
- * or gtk css name calendar which would also apply to other calendar
- * widgets */
-
-#gnc-id-dense-calendar .frame {
-}
-
-calendar .frame {
-}
-
-#gnc-id-dense-calendar .header {
- color: @blue;
-}
-
-calendar .header {
- color: @blue;
-}
-
-#gnc-id-dense-calendar .primary {
-  color: @green;
-}
-
-#gnc-id-dense-calendar .secondary {
-  color: @yellow;
-}
-
-#gnc-id-dense-calendar .markers {
-  color: @red;
-}
-
-#gnc-id-dense-calendar-popup {
-  color: orange;
-}
-
-#gnc-id-dense-calendar-popup treeview {
-  color: orange;
-}
-
-/* Progress bar */
-progressbar progress {
-  color: green;
-}
-
-/* Status Bar */
-statusbar frame {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: @bg_highlight;
-}
-
-statusbar {
-  background-color: @bg_highlight;
-} 
-
-statusbar label {
-  /* font-size: 12px; */
-  color: @yellow;
-}
-
-/* Reconcile Window */
-#gnc-id-reconcile-totals * {
-}
-
-.gnc-class-credits treeview {
-}
-
-.gnc-class-credits treeview:selected {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-.gnc-class-debits treeview {
-}
-
-.gnc-class-debits treeview:selected {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-/* Highlight Text */
-.gnc-class-highlight {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-
-/* Summary bar */
-#gnc-id-summarybar {
-  background-color: @bg_highlight;
-  color: @yellow;
-}
-
-#gnc-id-summarybar .gnc-class-highlight {
-  background-color: @bg_highlight;
-  color: @yellow;
-}
-
-#gnc-id-summarybar label {
-  background-color: @bg_highlight;
-  color: @yellow;
-}
-
-/* GTK doesn't support attribute selectors so can't use things like :not([disable]) */
-
-#gnc-id-main-window menubar {
-  color: @fg_color;
-  background-color: @bg_highlight;
-  outline-width: 0px;
-  border-width: 0px;
-}
-
-menuitem label {
-  background-color: inherit;
-  color: inherit;
-}
-
-menuitem label accelerator {
-  background-color: inherit;
-  color: inherit;
-}
-
-menuitem:disabled {
-  color: mix (@fg_color, @bg_color, 0.5);
-}
-
-menuitem:hover {
-  background-color: @bg_color;
-  color: inherit;
-}
-
-menuitem {
-  background-color: @bg_highlight;
-  color: @fg_color;
-}
-
-/*
-*:focus {
-  background-color: @bg_highlight;
-  color: @fg_highlight;
-}
-*/
-
-.text-button label {
-  background-color: inherit;
+  border-color: mix (@bg_darker, @fg_highlight, 0.5);
 }
 
 button:focus label {
@@ -468,27 +399,199 @@ button:focus {
   background-color: @bg_highlight;
 }
 
-/*
- * 
- * From the gnc-combott i've tried this as class, id, and element.  No luck.
- *
-  gnc-id-combo-tooltip {
-    background-color: @bg_highlight;
-    color: @yellow;
-  }
-*/
+.text-button label {
+  background-color: inherit;
+}
 
-/* DIALOGS */
+/* Other buttons */
 
-#gnc-id-account {
+check {
+  background-image: none;
+  color: @fg_pop;
+  background-color: mix (@bg_darker, @bg_color, 0.5);
+}
+
+check:hover {
+  background-color: @bg_darker;
+}
+
+check:checked {
+  background-color: @bg_darker;
+}
+
+radio {
+  background-image: none;
+  color: @fg_pop;
+  background-color: mix (@bg_darker, @bg_color, 0.5);
+}
+
+gnc-id-cursor button {
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+  border-width: 1px;
+}
+
+/* ====== DIALOGS ====== */
+
+assistant {
   background-color: @bg_color;
 }
 
-#gnc-id-account notebook stack, header {
-  background-color: @bg_highlight;
+assistant notebook {
+  background-color: @bg_darker;
 }
 
-/* Adding some contrast in the budget */
-#gnc-id-account-tree {
+dialog {
+  background-color: @bg_color;
+}
+
+dialog stack {
+  background-color: @bg_color;
+}
+
+messagedialog {
+  background-color: @bg_color;
+}
+
+messagedialog box {
+}
+
+.sidebar {
+  background-color: @bg_dark;
+}
+
+text {
+  background-color: @bg_darker;
+}
+
+/* Frame around text in the tip of the day dialog */
+textview {
+  background-color: @bg_darker;
+}
+
+window, stack {
+  background-color: @bg_color;
+}
+
+window header {
+  background-color: @bg_darker;
+}
+
+/* Specific windows */
+
+dialog #gnc-id-account-tree {
+  background-color: @bg_darker;
+}
+
+#gnc-id-account notebook header {
+  background-color: @bg_darker;
+}
+
+#gnc-id-commodity {
+  background-color: @bg_color;
+}
+
+#gnc-id-preferences stack {
+  background-color: @bg_darker;
+}
+
+#gnc-id-preferences tabs {
+  background-color: @bg_color;
+}
+
+/* ====== CALENDAR ====== */
+
+/* Dense Calendar Settings, use widget name gnc-id-dense-calendar
+ * or gtk css name calendar which would also apply to other calendar
+ * widgets */
+
+/*.calendar {*/
+/*    background-color: @bg_color;*/
+/*    color: @fg_color;*/
+/*}*/
+
+#gnc-id-dense-calendar .frame {
+}
+
+calendar .frame {
+}
+
+#gnc-id-dense-calendar .header {
+}
+
+calendar .header {
+  color: @fg_color;
+  background-color: @bg_color;
+  border-radius:    2px ;
+  border-width:     1px ;
+  /*background-image: linear-gradient(red,green,blue) ;*/
+}
+
+calendar.highlight
+{
+  background-color: @bg_dark ;
+  color:            @fg_color ;
+  border-radius:    1px ;
+  padding:          1px ;
+}
+
+calendar.view
+{
+  background-color: @bg_highlight ;
+}
+
+calendar.button:hover
+{
+  background-color: @bg_highlight ;
+  border-style:     solid ;
+  border-width:     1px ;
+  color:	    @fg_pop;
+}
+
+calendar*:selected,
+calendar*:selected:focus
+{
+  background-color: @fg_pop ;
+  color:            @bg_darker ;
+  border-radius:    2px ;
+}
+
+#gnc-id-dense-calendar .primary {
+}
+
+#gnc-id-dense-calendar .secondary {
+}
+
+#gnc-id-dense-calendar .markers {
+  color: @negative;
+}
+
+#gnc-id-dense-calendar-popup {
+  color: @fg_color;
+}
+
+#gnc-id-dense-calendar-popup treeview {
+  color: @fg_color;
+}
+
+/* ====== RECONCILE WINDOW ====== */
+
+#gnc-id-reconcile-totals * {
+}
+
+.gnc-class-credits treeview {
+}
+
+.gnc-class-credits treeview:selected {
+  background-color: @bg_color;
+  color: @fg_color;
+}
+
+.gnc-class-debits treeview {
+}
+
+.gnc-class-debits treeview:selected {
   background-color: @bg_highlight;
+  color: @fg_highlight;
 }
