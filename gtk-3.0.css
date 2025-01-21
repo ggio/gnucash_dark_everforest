@@ -611,8 +611,7 @@ calendar .frame
 
 calendar .header 
 {
-  color: @fg_color;
-  background-color: @bg_color;
+  background-color: @bg_highlight;
   border-radius:    2px ;
   border-width:     1px ;
 }
@@ -646,6 +645,28 @@ calendar*:selected:focus
   border-radius:    2px ;
 }
 
+#gnc-id-dense-calendar .calendar
+{
+    color: @fg_color;
+}
+
+#gnc-id-dense-calendar .view .label
+{
+    color: red;
+}
+
+#gnc-id-dense-calendar .primary-dark {
+  background-color: mix(@bg_primary, black, 0.7);
+}
+
+#gnc-id-dense-calendar .secondary-dark {
+  background-color: mix(@bg_color, black, 0.1);
+}
+
+#gnc-id-dense-calendar .markers-dark {
+  background-color: mix(@fg_pop, black, 0.1);
+}
+
 #gnc-id-dense-calendar .primary 
 {
 }
@@ -656,7 +677,7 @@ calendar*:selected:focus
 
 #gnc-id-dense-calendar .markers 
 {
-  color: @negative;
+  color: @fg_pop;
 }
 
 #gnc-id-dense-calendar-popup 
