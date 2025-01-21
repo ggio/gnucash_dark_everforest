@@ -1,6 +1,4 @@
-# Dracula for [GTK](https://www.gtk.org/)
-
-A dark everforest theme for [gnucash](https://www.gtk.org/).
+# Dark Everforest theme for GnuCash
 
 ![Screenshot](./screenshot.png)
 
