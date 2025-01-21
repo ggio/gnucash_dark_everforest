@@ -23,7 +23,7 @@ git clone https://github.com/ggio/gnucash_dark_everforest.git ~/.config/gnucash
 
 ## Choose a dark window theme with `gnome-tweaks`
 
-It is recommended that you also choose a dark theme for legacy applications with [`gnome-tweaks`](https://bytexd.com/how-to-install-and-use-gnome-tweaks-tool-in-ubuntu/).
+For a fully dark appearance, it is recommended that you also choose a dark theme for legacy applications with [`gnome-tweaks`](https://bytexd.com/how-to-install-and-use-gnome-tweaks-tool-in-ubuntu/).
 
 ## References
 
