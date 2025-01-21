@@ -84,6 +84,12 @@
   color: @fg_highlight;
 }
 
+/* Negative number color */
+.gnc-class-negative-numbers 
+{
+  color: @negative;
+}
+
 entry 
 {
   background-color: @bg_darker;
@@ -122,11 +128,9 @@ scrollbar slider
 
 #gnc-id-account-tree:hover 
 {
-  /* Why doesn't this apply?  color applies just fine... */
   background-color: @bg_highlight;
 }
 
-/* Tweaking with some trees to add some contrast in the budget */
 #gnc-id-account-tree 
 {
   background-color: @bg_color;
@@ -231,12 +235,6 @@ toolbar toolbutton label
 {
   padding-left: 4px;
   padding-right: 4px;
-}
-
-/* Negative number color */
-.gnc-class-negative-numbers 
-{
-  color: @negative;
 }
 
 /* Gnucash Main Window, reduce size */
