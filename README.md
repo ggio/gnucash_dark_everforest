@@ -6,9 +6,9 @@
 
 All instructions can be found at [gnucash.org/wiki](https://wiki.gnucash.org/wiki/GTK3#Via_css).
 
-Basically, you have to put the `gtk-3.0.css` file inside [`USER_CONFIG_HOME`](https://wiki.gnucash.org/wiki/Configuration_Locations#GNC_CONFIG_HOME).
+Basically, you have to copy the `gtk-3.0.css` file to the [`USER_CONFIG_HOME`](https://wiki.gnucash.org/wiki/Configuration_Locations#GNC_CONFIG_HOME) folder.
 
-In Linux systems, you can install it cloning this repo:
+In Linux systems, you can install it directly by cloning this repo:
 
 ``` bash
 git clone https://github.com/ggio/gnucash_dark_everforest.git ~/.config/gnucash
