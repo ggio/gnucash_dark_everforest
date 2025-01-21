@@ -2,9 +2,15 @@
 
 ![Screenshot](./screenshot.png)
 
+A custom theme developed by reading the docs and searching the internet
+for help, examples, and troubleshooting.
+
+It implements a series of changes not covered by the official sample template, 
+possibly making it a better starting point for new themes or your own custom styling.
+
 ## Install
 
-All instructions can be found at [gnucash.org/wiki](https://wiki.gnucash.org/wiki/GTK3#Via_css).
+Instructions can be found at [gnucash.org/wiki](https://wiki.gnucash.org/wiki/GTK3#Via_css).
 
 Basically, you have to copy the `gtk-3.0.css` file to the [`USER_CONFIG_HOME`](https://wiki.gnucash.org/wiki/Configuration_Locations#GNC_CONFIG_HOME) folder.
 
