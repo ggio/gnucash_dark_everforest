@@ -1,6 +1,7 @@
 # Dark Everforest theme for GnuCash
 
-![Screenshot](./screenshot.png)
+![Screenshot - main window](./sc_01_.png)
+![Screenshot -  register](./sc_02_.png)
 
 A custom theme developed by reading the docs and searching the internet
 for help, examples, and troubleshooting.
@@ -30,6 +31,8 @@ For a fully dark appearance, it is recommended that you also select a dark theme
 - [obsidian_everforest](https://github.com/0xGlitchbyte/obsidian_everforest) -
 basic colors and starting point.
 - [gnucash/doc/gtk-3.0.css](https://github.com/Gnucash/gnucash/blob/stable/doc/gtk-3.0.css) - official sample CSS file.
+- Check also my [gruvbox theme](https://github.com/ggio/gnucash_gruvbox) for
+GnuCash.
 
 ## License
 

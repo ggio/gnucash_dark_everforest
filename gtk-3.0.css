@@ -12,39 +12,21 @@
 
 @define-color yellow	    #b58900;
 @define-color red	    #e04c56;
-@define-color red-light	    #dc747b;
 @define-color dark	    #2f383e;
 @define-color dark2  	    #374247;
 @define-color dark3  	    #22282c;
-@define-color bg-new	    #54646c;
+@define-color dark4	    #404c51;
 @define-color fg-dark       #d3c6aa;
-@define-color fg2-dark      #C9B382;
-@define-color fg-new	    #cdae6a;
-@define-color charcoal	    #2a2a2a;
-
-/* Everforest */
-@define-color bg0-dark       #22282c;
-@define-color bg1-dark       #272f34;
-@define-color bg-dark        #2f383e;
-@define-color bg2-dark       #374247;
-@define-color bg3-dark       #404c51;
-@define-color bg4-dark       #4a555b;
-@define-color bg5-dark       #525c62;
-@define-color bg_visual      #503946;
-@define-color bg_red         #4e3e43;
-@define-color bg_green       #404d44;
-@define-color bg_blue        #394f5a;
-@define-color bg_yellow      #4a4940;
-@define-color shadow         #000070;
+@define-color fg-hl	    #cdae6a;
 
 /* Application wide colors */
 
 @define-color	bg_color	@dark2;
-@define-color	bg_highlight	@bg3-dark;
+@define-color	bg_highlight	@dark4;
 @define-color	bg_dark		@dark;
 @define-color	bg_darker	@dark3;
 @define-color	fg_color	@fg-dark;
-@define-color	fg_highlight	@fg-new;
+@define-color	fg_highlight	@yellow;
 @define-color	fg_pop		@yellow;
 @define-color	negative	@red;
 
@@ -58,12 +40,6 @@
 @define-color fg_secondary  #272402;
 @define-color bg_cursor     #ffeb81;
 @define-color fg_cursor     #3a3000;
-
-/* ====== TODO ====== */
-/*
-    * (A) Calendar
-    * (C) Reports' CSS
-*/
 
 /* ====== GENERAL ====== */
 
