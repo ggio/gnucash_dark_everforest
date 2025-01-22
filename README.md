@@ -1,7 +1,7 @@
 # Dark Everforest theme for GnuCash
 
-![Screenshot - main window](./sc_01_.png)
-![Screenshot -  register](./sc_02_.png)
+![Screenshot - main window](./sc_01.png)
+![Screenshot -  register](./sc_02.png)
 
 A custom theme developed by reading the docs and searching the internet
 for help, examples, and troubleshooting.
