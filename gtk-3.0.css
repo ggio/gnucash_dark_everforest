@@ -8,27 +8,58 @@
 
 /* ====== COLORS ====== */
 
-/* Elementary colors */
+/* Elementary colors
+ * in most part  from 0xGlitchbyte/obsidian_forest: https://github.com/0xGlitchbyte/obsidian_everforest/blob/main/obsidian.css */
 
-@define-color yellow	    #b58900;
-@define-color red	    #e04c56;
-@define-color dark	    #2f383e;
-@define-color dark2  	    #374247;
-@define-color dark3  	    #22282c;
-@define-color dark4	    #404c51;
-@define-color fg-dark       #d3c6aa;
-@define-color fg-hl	    #cdae6a;
+@define-color bg0-dark       #22282c;
+@define-color bg1-dark       #272f34;
+@define-color bg-dark        #2f383e;
+@define-color bg2-dark       #374247;
+@define-color bg3-dark       #404c51;
+@define-color bg4-dark       #4a555b;
+@define-color bg5-dark       #525c62;
+@define-color bg_visual      #503946;
+@define-color bg_red         #4e3e43;
+@define-color bg_green       #404d44;
+@define-color bg_blue        #394f5a;
+@define-color bg_yellow      #4a4940;
+@define-color shadow         #000070;
+
+@define-color fg0-dark       #d3c6aa;
+@define-color fg1-dark       #e9d2a8;
+@define-color grey0-dark     #7f897d;
+@define-color grey1-dark     #859289;
+@define-color grey2-dark     #9aa79d;
+
+@define-color bright-yellow  #cc9900;
+@define-color bright-red     #fc8b81;
+
+@define-color faded-red     #e67e80;
+@define-color faded-orange  #e69875;
+@define-color faded-yellow  #dbbc7f;
+@define-color faded-green   #a7c080;
+@define-color faded-aqua    #83c092;
+@define-color faded-blue    #7fbbb3;
+@define-color faded-purple  #d699b6;
+
+@define-color dim-red       #da6362;
+@define-color dim-orange    #d77f48;
+@define-color dim-yellow    #bf983d;
+@define-color dim-green     #899c40;
+@define-color dim-aqua      #569d79;
+@define-color dim-blue      #5a93a2;
+@define-color dim-purple    #b87b9d;
 
 /* Application wide colors */
 
-@define-color	bg_color	@dark2;
-@define-color	bg_highlight	@dark4;
-@define-color	bg_dark		@dark;
-@define-color	bg_darker	@dark3;
-@define-color	fg_color	@fg-dark;
-@define-color	fg_highlight	@yellow;
-@define-color	fg_pop		@yellow;
-@define-color	negative	@red;
+@define-color bg_color		@bg-dark;
+@define-color bg_02		@bg2-dark;
+@define-color bg_03		@bg0-dark;
+@define-color bg_highlight	@bg_03;
+@define-color fg_color		@fg1-dark;
+@define-color fg_highlight	@bright-yellow;
+@define-color fg_pop		@bright-yellow;
+@define-color negative		@bright-red;
 
 /* Register's colors */
 
@@ -68,7 +99,7 @@
 
 entry 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 /* Scollbar size */
@@ -88,18 +119,18 @@ scrollbar slider
 
 #gnc-id-main-window 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 #gnc-id-main-window notebook header 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 /* Area above the status bar */
 #gnc-id-account-page 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 #gnc-id-account-tree:hover 
@@ -115,7 +146,7 @@ scrollbar slider
 /* Controls, along much other things, the budget summary */
 treeview 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
   color: @fg_color;
 }
 
@@ -155,12 +186,12 @@ statusbar frame
 {
   margin-top: 0px;
   margin-bottom: 0px;
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 statusbar 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 } 
 
 statusbar label 
@@ -191,7 +222,7 @@ statusbar label
 /* Toolbar Button size and spacing */
 toolbar 
 {
-  background-color: @bg_color;
+  background-color: @bg_03;
   color: @fg_highlight;
 }
 
@@ -224,7 +255,7 @@ toolbar toolbutton label
   margin-bottom: 3px;
   border-top: 0px;
   border-bottom: 0px;
-  background-color: @bg_dark;
+  background-color: @bg_02;
 }
 
 #gnc-id-main-window notebook tab:checked 
@@ -408,13 +439,13 @@ button
   background-image: none;
   border-width: 3px;
   border-style: solid;
-  border-color: mix (@bg_darker, @bg_dark, 0.5);
-  background-color: @bg_dark;
+  border-color: mix (@bg_03, @bg_02, 0.5);
+  background-color: @bg_02;
 }
 
 button:hover 
 {
-  border-color: @bg_darker;
+  border-color: mix(@fg_color, @bg_color, 0.5);
   background-color: @bg_highlight;
 }
 
@@ -426,7 +457,7 @@ button:hover label
 
 button:active 
 {
-  border-color: mix (@bg_darker, @fg_highlight, 0.5);
+  border-color: mix (@bg_03, @fg_highlight, 0.5);
 }
 
 button:focus label 
@@ -450,24 +481,24 @@ check
 {
   background-image: none;
   color: @fg_pop;
-  background-color: mix (@bg_darker, @bg_color, 0.5);
+  background-color: mix (@bg_03, @bg_color, 0.5);
 }
 
 check:hover 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 check:checked 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 radio 
 {
   background-image: none;
   color: @fg_pop;
-  background-color: mix (@bg_darker, @bg_color, 0.5);
+  background-color: mix (@bg_03, @bg_color, 0.5);
 }
 
 gnc-id-cursor button 
@@ -487,7 +518,7 @@ assistant
 
 assistant notebook 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 dialog 
@@ -511,18 +542,18 @@ messagedialog box
 
 .sidebar 
 {
-  background-color: @bg_dark;
+  background-color: @bg_02;
 }
 
 text 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 /* Frame around text in the tip of the day dialog */
 textview 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 window, stack 
@@ -532,19 +563,19 @@ window, stack
 
 window header 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 /* Specific windows */
 
 dialog #gnc-id-account-tree 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 #gnc-id-account notebook header 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 #gnc-id-commodity 
@@ -554,7 +585,7 @@ dialog #gnc-id-account-tree
 
 #gnc-id-preferences stack 
 {
-  background-color: @bg_darker;
+  background-color: @bg_03;
 }
 
 #gnc-id-preferences tabs 
@@ -585,16 +616,18 @@ calendar .frame
 {
 }
 
+/* Header in "Scheduled Transactions" */
 calendar .header 
 {
-  background-color: @bg_highlight;
+  background-color: @bg_02;
   border-radius:    2px ;
   border-width:     1px ;
 }
 
+/* Days of the week in Register */
 calendar .highlight
 {
-  background-color: @bg_dark ;
+  background-color: @bg_02 ;
   color:            @fg_color ;
   border-radius:    1px ;
   padding:          1px ;
@@ -602,7 +635,7 @@ calendar .highlight
 
 calendar.view
 {
-  background-color: @bg_highlight ;
+  background-color: @bg_02 ;
 }
 
 calendar.button:hover
@@ -617,7 +650,7 @@ calendar*:selected,
 calendar*:selected:focus
 {
   background-color: @fg_pop ;
-  color:            @bg_darker ;
+  color:            @bg_03 ;
   border-radius:    2px ;
 }
 
@@ -640,7 +673,7 @@ calendar*:selected:focus
 }
 
 #gnc-id-dense-calendar .markers-dark {
-  background-color: mix(@fg_pop, black, 0.1);
+  background-color: mix(@fg_pop, black, 0.4);
 }
 
 #gnc-id-dense-calendar .primary 
